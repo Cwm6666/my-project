@@ -1,0 +1,39 @@
+{
+  "name": "multi-agent-system",
+  "version": "1.0.0",
+  "description": "跨境电商多 Agent 融合系统 - 角色认知 + 共享上下文 + 协调调度",
+  "main": "src/orchestrator/Orchestrator.js",
+  "scripts": {
+    "test:roles": "node src/roles/test-roles.js",
+    "test:context": "node src/shared-context/test-shared-context.js",
+    "test:orchestrator": "node src/orchestrator/test-orchestrator.js",
+    "test:integration": "node src/orchestrator/test-integration.js",
+    "test:integration:real": "node src/orchestrator/test-integration.js --real",
+    "test:all": "npm run test:roles && npm run test:context && npm run test:orchestrator && npm run test:integration",
+    "start": "node src/orchestrator/test-integration.js",
+    "start:real": "node src/orchestrator/test-integration.js --real",
+    "demo": "node src/orchestrator/test-integration.js",
+    "api": "node src/api/server.js",
+    "api:prod": "NODE_ENV=production node src/api/server.js",
+    "clean": "node -e \"const fs=require('fs');const path=require('path');const dir='./agent-results';if(fs.existsSync(dir)){fs.readdirSync(dir).forEach(f=>fs.unlinkSync(path.join(dir,f)));console.log('已清理临时文件');}\""
+  },
+  "keywords": [
+    "multi-agent",
+    "orchestrator",
+    "workflow",
+    "cross-border-ecommerce",
+    "ai-agents",
+    "openclaw"
+  ],
+  "author": "Cwm6666",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cwm6666/my-project.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
